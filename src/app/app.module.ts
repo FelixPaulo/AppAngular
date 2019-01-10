@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
@@ -41,7 +41,8 @@ import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-
     //Devo importar minhas rotas definidas no caso o ROUTES
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [RestaurantsServices, ShoppingCartService],
+  //sempre que alguem pedir esse LOCALE_ID esse cara ira retornar o valor pt-BR
+  providers: [RestaurantsServices, ShoppingCartService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
