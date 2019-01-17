@@ -13,7 +13,7 @@ export class ShoppingCartService {
         let foundItem = this.items.find((mItem) => mItem.menuItem.id === item.id);
         
         if(foundItem){
-            foundItem.quantity = foundItem.quantity + 1; 
+            this.increaseQty(foundItem);
         }else{
             this.items.push(new CartItem(item));
         }
@@ -31,5 +31,16 @@ export class ShoppingCartService {
         .map(item => item.value())
         //soma a quantitade + o preco e o 0 indica o valor inicial
         .reduce((prev, value) => prev+value, 0);
+    }
+
+    increaseQty(item: CartItem){
+        item.quantity = item.quantity + 1;
+    }
+
+    decreaseQty(item: CartItem){
+        item.quantity = item.quantity - 1;
+        if(item.quantity === 0){
+            this.removeItem(item);
+        }
     }
 }

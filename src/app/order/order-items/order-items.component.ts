@@ -25,12 +25,11 @@ export class OrderItemsComponent implements OnInit {
     this.increaseQty.emit(item);
   }
 
-  emitdecreaseQty(item: CartItem){
+  emitDecreaseQty(item: CartItem){
     this.decreaseQty.emit(item);
   }
 
   emitRemove(item: CartItem){
     this.remove.emit(item);
   }
-
 }

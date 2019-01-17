@@ -24,6 +24,7 @@ import { OrderComponent } from './order/order.component';
 import { InputComponent } from './Shared/input/input.component';
 import { RadioComponent } from './Shared/radio/radio.component';
 import { OrderItemsComponent } from './order/order-items/order-items.component';
+import { OrderService } from './order/order.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { OrderItemsComponent } from './order/order-items/order-items.component';
     RouterModule.forRoot(ROUTES)
   ],
   //sempre que alguem pedir esse LOCALE_ID esse cara ira retornar o valor pt-BR
-  providers: [RestaurantsServices, ShoppingCartService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [RestaurantsServices, ShoppingCartService, OrderService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
