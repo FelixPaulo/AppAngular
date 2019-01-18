@@ -6,6 +6,7 @@ import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { OrderComponent } from './order/order.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 export const ROUTES: Routes = [
     //quando nao epceficar nada ou vazia quero que meu componente direcione para pagina home
@@ -13,6 +14,7 @@ export const ROUTES: Routes = [
     //Quando o modulo de roteamento encontrar o conteudo about quero que mostre o meu conteudo da pasta about
     {path: 'about', component: AboutComponent},
     {path: 'order', component: OrderComponent},
+    {path: 'order-summary', component: OrderSummaryComponent},
     {path: 'home', component: HomeComponent},
     {path: 'restaurants', component: RestaurantsComponent},
     {path: 'restaurants/:id', component: RestaurantDetailComponent,

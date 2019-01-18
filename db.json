@@ -370,6 +370,53 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "teste",
+      "number": "01",
+      "optionalAddress": "apt24",
+      "paymentOption": "REF",
+      "orderItems": [
+        {
+          "quantity": 3,
+          "menuId": "cup-cake"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "address": "eeeeeeeeeeeee",
+      "number": "23",
+      "optionalAddress": "eee",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 2,
+          "menuId": "donut"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "paulo felix",
+      "number": "24",
+      "optionalAddress": "apt 85",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "cup-cake"
+        },
+        {
+          "quantity": 1,
+          "menuId": "donut"
+        },
+        {
+          "quantity": 2,
+          "menuId": "bread"
+        }
+      ],
+      "id": 3
+    }
+  ]
 }
- 
