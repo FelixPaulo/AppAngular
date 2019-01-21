@@ -5,6 +5,9 @@ import { CartItem } from 'app/restaurant-detail/shopping-cart/cart-item.model';
 import { OrderItem, Order } from './order.model';
 import {Router} from '@angular/router';
 
+//React form
+import {FormGroup, FormBuilder} from '@angular/forms';
+
 @Component({
   selector: 'mt-order',
   templateUrl: './order.component.html',
@@ -20,9 +23,23 @@ export class OrderComponent implements OnInit {
     {label: 'Cartão Refeição', value: 'REF'}
   ];
 
-  constructor(private orderService: OrderService, private router: Router) { }
+  orderForm: FormGroup;  
+
+  //FormBuilder react form
+  constructor(private orderService: OrderService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    //FormBuilder react form
+    this.orderForm = this.formBuilder.group({
+      // name: '',
+      name: this.formBuilder.control(''),
+      email: this.formBuilder.control(''),//duas formas 
+      emailConfirmation: this.formBuilder.control(''),
+      address: this.formBuilder.control(''), 
+      number: this.formBuilder.control(''),
+      optionalAddress: this.formBuilder.control(''),
+      paymentOption: this.formBuilder.control('')
+    });
   }
 
   itemsValue(): number{

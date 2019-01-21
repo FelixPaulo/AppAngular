@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ContentChild, AfterContentInit } from '@angular/core';
-import {NgModel} from '@angular/forms';
+import {NgModel, FormControlName} from '@angular/forms';
 
 
 @Component({
@@ -14,7 +14,11 @@ export class InputComponent implements OnInit, AfterContentInit {
   @Input() label: string;
   @Input() errorMessage: string;
 
+  //template form
   @ContentChild(NgModel) model: NgModel;
+
+  //FormBuilder react form
+  @ContentChild(FormControlName) control: FormControlName;
 
   constructor() { }
 
@@ -23,9 +27,9 @@ export class InputComponent implements OnInit, AfterContentInit {
 
   //vai ser chamando quando o conteudo for chamado "conteudo é o que vai ficar no lugar de ngmodel"
   ngAfterContentInit(): void {
-    this.input = this.model;
+    this.input = this.model || this.control;
     if(this.input === undefined){
-      throw new Error('Esse component precisa ser usado com sua diretiva ngModel');
+      throw new Error('Esse component precisa ser usado com sua diretiva ngModel ou formControlName');
       
     }
   }

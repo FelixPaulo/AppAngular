@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // importar routes para as rotas
 import{ROUTES} from './app.routes';
@@ -27,6 +27,7 @@ import { OrderItemsComponent } from './order/order-items/order-items.component';
 import { OrderService } from './order/order.service';
 import { DeliveryCostsComponent } from './order/delivery-costs/delivery-costs.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { RatingComponent } from './Shared/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -46,13 +47,15 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
     RadioComponent,
     OrderItemsComponent,
     DeliveryCostsComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     //Devo importar minhas rotas definidas no caso o ROUTES
     RouterModule.forRoot(ROUTES)
   ],
