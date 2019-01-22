@@ -1,6 +1,6 @@
 import {Routes} from '@angular/router'
 import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
+// import { AboutComponent } from './about/about.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
@@ -12,7 +12,7 @@ export const ROUTES: Routes = [
     //quando nao epceficar nada ou vazia quero que meu componente direcione para pagina home
     {path: '', component: HomeComponent},
     //Quando o modulo de roteamento encontrar o conteudo about quero que mostre o meu conteudo da pasta about
-    {path: 'about', component: AboutComponent},
+    {path: 'about', loadChildren: './about/about.module#AboutModule'},
     {path: 'order', component: OrderComponent},
     {path: 'order-summary', component: OrderSummaryComponent},
     {path: 'home', component: HomeComponent},
