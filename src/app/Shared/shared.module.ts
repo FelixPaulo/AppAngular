@@ -10,12 +10,13 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ShoppingCartService } from "app/restaurant-detail/shopping-cart/shopping-cart.service";
 import { RestaurantsServices } from "app/restaurants/restaurants.service";
 import { OrderService } from "app/order/order.service";
+import { SnackbarComponent } from './messages/snackbar/snackbar.component';
 
 @NgModule({
-    declarations:[InputComponent, RadioComponent, RatingComponent],
+    declarations:[InputComponent, RadioComponent, RatingComponent, SnackbarComponent],
     imports: [CommonModule, FormsModule, ReactiveFormsModule],
     //os modulos que importar este modulo nao irá precisar importar esses modulos exports
-    exports: [InputComponent, RadioComponent, 
+    exports: [InputComponent, RadioComponent, SnackbarComponent,
              RatingComponent, CommonModule, 
              FormsModule, ReactiveFormsModule]
 })

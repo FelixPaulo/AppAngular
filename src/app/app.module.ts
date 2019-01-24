@@ -16,6 +16,9 @@ import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.compo
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { SharedModule } from './Shared/shared.module';
+
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 // import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 // import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
 // import { OrderComponent } from './order/order.component';
@@ -52,6 +55,7 @@ import { SharedModule } from './Shared/shared.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpModule,
     RouterModule,
     //Esses dois ja estao sendo importados no shared.module.ts
