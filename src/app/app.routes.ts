@@ -7,6 +7,7 @@ import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 // import { OrderComponent } from './order/order.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const ROUTES: Routes = [
     //quando nao epceficar nada ou vazia quero que meu componente direcione para pagina home
@@ -26,5 +27,6 @@ export const ROUTES: Routes = [
         {path: 'menu', component: MenuComponent},
         {path: 'reviews', component: ReviewsComponent}  
     ]
-    }
+    },
+    {path: '**', component: NotFoundComponent},
 ]
