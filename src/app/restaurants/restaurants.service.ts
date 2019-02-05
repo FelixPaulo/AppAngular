@@ -14,9 +14,9 @@ export class RestaurantsServices{
     
   constructor(private http: Http){}
 
-  restaurants(): Observable<Restaurant[]>{
+  restaurants(search?: string): Observable<Restaurant[]>{
     //todos os tipos do metodo http retornam um observable da bibloteca rxjs
-      return this.http.get(`${MEAT_API}/restaurants`)
+      return this.http.get(`${MEAT_API}/restaurants`, {params: {q: search}})
       .map(response => response.json())
       .catch(ErrorHandler.handleError);
   }
