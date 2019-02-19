@@ -12,7 +12,6 @@ export class ErrorHandler {
         if(error instanceof HttpErrorResponse){
             const body = error.error
             errorMessage = `${error.status}: ${error.status} - ${error.statusText || ''} ${body}`;
-            // errorMessage = `Erro ${error.status} ao acessar a URL ${error.url} - ${error.statusText}`;
         }else{
             errorMessage = error.message ? error.message : error.toString();
         }
