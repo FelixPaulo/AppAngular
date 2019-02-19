@@ -55,7 +55,7 @@ export class RestaurantsComponent implements OnInit {
     .distinctUntilChanged()
     .switchMap(searchTerm =>
          this.restauransService.restaurants(searchTerm)
-         .catch(error => Observable.from([error])))
+         .catch(error=>Observable.from([])))
        .subscribe(restaurants => this.restaurants = restaurants);
 
     this.restauransService.restaurants()
