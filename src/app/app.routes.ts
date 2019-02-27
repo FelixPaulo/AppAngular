@@ -8,10 +8,12 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 // import { OrderComponent } from './order/order.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './security/login/login.component';
 
 export const ROUTES: Routes = [
     //quando nao epceficar nada ou vazia quero que meu componente direcione para pagina home
     {path: '', component: HomeComponent},
+    {path: 'login', component: LoginComponent},
     //Quando o modulo de roteamento encontrar o conteudo about quero que mostre o meu conteudo da pasta about
     {path: 'about', loadChildren: './about/about.module#AboutModule'},
     // {path: 'order', component: OrderComponent},
