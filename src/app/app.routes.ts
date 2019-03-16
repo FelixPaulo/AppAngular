@@ -1,23 +1,22 @@
 import {Routes} from '@angular/router'
 import { HomeComponent } from './home/home.component';
-// import { AboutComponent } from './about/about.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
-// import { OrderComponent } from './order/order.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './security/login/login.component';
+import { LoggedInGuard } from './security/loggedin.guard';
 
 export const ROUTES: Routes = [
     //quando nao epceficar nada ou vazia quero que meu componente direcione para pagina home
     {path: '', component: HomeComponent},
+    {path: 'login/:to', component: LoginComponent},
     {path: 'login', component: LoginComponent},
     //Quando o modulo de roteamento encontrar o conteudo about quero que mostre o meu conteudo da pasta about
     {path: 'about', loadChildren: './about/about.module#AboutModule'},
-    // {path: 'order', component: OrderComponent},
-    {path: 'order', loadChildren: './order/order.module#OrderModule'},
+    {path: 'order', loadChildren: './order/order.module#OrderModule', canLoad: [LoggedInGuard], canActivate: [LoggedInGuard]},
     {path: 'order-summary', component: OrderSummaryComponent},
     {path: 'home', component: HomeComponent},
     {path: 'restaurants', component: RestaurantsComponent},

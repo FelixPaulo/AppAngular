@@ -22,6 +22,7 @@ import { SharedModule } from './Shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './security/login/login.component';
+import { UserDetailComponent } from './header/user-detail/user-detail.component';
 
 // import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 // import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
@@ -57,6 +58,7 @@ import { LoginComponent } from './security/login/login.component';
     OrderSummaryComponent,
     NotFoundComponent,
     LoginComponent,
+    UserDetailComponent,
     // RatingComponent
   ],
   imports: [
