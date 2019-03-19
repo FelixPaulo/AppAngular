@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule, LOCALE_ID, ErrorHandler } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 // importar routes para as rotas
+import {ApplicationErrorHandler} from './app.error-handler';
 import{ROUTES} from './app.routes';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -77,7 +78,8 @@ import { UserDetailComponent } from './header/user-detail/user-detail.component'
 
   //sempre que alguem pedir esse LOCALE_ID esse cara ira retornar o valor pt-BR
   // providers: [RestaurantsServices, ShoppingCartService, OrderService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}, {provide: LOCALE_ID, useValue: 'pt-BR'}, 
+              {provide: ErrorHandler, useClass: ApplicationErrorHandler}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
