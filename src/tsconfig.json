@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "paths": { "*": ["types/*"] },
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
@@ -17,6 +18,9 @@
     "typeRoots": [
       "../node_modules/@types"
     ]
+  },
+  "angularCompileroptions":{
+    "preserveWhitespaces": true
   },
   "exclude": [
     "test.ts",

@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
 import 'rxjs/add/operator/do';
 
 //React form
-import {FormGroup, FormBuilder, Validators, AbstractControl} from '@angular/forms';
+import {FormGroup, FormBuilder, FormControl, Validators, AbstractControl} from '@angular/forms';
 
 @Component({
   selector: 'mt-order',
@@ -35,16 +35,18 @@ export class OrderComponent implements OnInit {
 
   ngOnInit() {
     //FormBuilder react form
-    this.orderForm = this.formBuilder.group({
+    this.orderForm = new FormGroup({
       // name: '',
-      name: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]),//duas formas
+      name: new FormControl('', {
+        validators: [Validators.required, Validators.minLength(5)]
+      }),//duas formas
       email: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]), 
       emailConfirmation: this.formBuilder.control('', [Validators.required, Validators.pattern(this.emailPattern)]),
       address: this.formBuilder.control('', [Validators.required, Validators.minLength(5)]), 
       number: this.formBuilder.control('', [Validators.required, Validators.pattern(this.numberPattern)]),
       optionalAddress: this.formBuilder.control(''),
       paymentOption: this.formBuilder.control('', [Validators.required])
-    }, {validator: OrderComponent.equalsTo});
+    }, {validators: [OrderComponent.equalsTo], updateOn: 'blur'});
   }
 
   //Checa o valor de dois campos validando se sao iguais, recebendo o grupo pra poder checar e atraves do metodo get pego a referencia da propriedade
